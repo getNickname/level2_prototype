@@ -1,0 +1,30 @@
+html, body, div{
+	margin: 0;
+	padding: 0;
+}
+
+#sep-container{
+	width: 1040px;
+	height: 585px;
+
+	position: relative;
+
+	margin: auto;
+	overflow: hidden;
+}
+
+	#sep-container div{
+		display: block;
+		position: absolute;
+		height: 585px;
+		top: 0;
+	}
+
+#sep-left-img{
+	background: url(../img/sep-left-image.jpg) 0 0 no-repeat;
+}
+
+#sep-right-img{
+	background: url(../img/sep-right-image.jpg) 0 0 no-repeat;
+	background-position: 100% 0;
+}
