@@ -23,19 +23,22 @@ function animateSeparation() {
 	var frameRate = 30;
 	var timeInterval = Math.round( 1000 / frameRate );
 
+	// Get mouse position
+	section.mousemove(function(e){
+
+	   	// raw mouse position
+	   	mouseX = e.pageX;
+
+	   	// mouse position relative to container div
+	   	relMouseX = mouseX - container.offset().left;
+
+	});
+
 	section.mouseenter(function(){
 
-		// Get mouse position
-		section.mousemove(function(e){
+		leftImg.stop();
+		rightImg.stop();
 
-		   	// raw mouse position
-		   	mouseX = e.pageX;
-
-		   	// mouse position relative to container div
-		   	relMouseX = mouseX - container.offset().left;
-
-		});
-		
 		loop = setInterval(function(){
 
 			// zeno's paradox dampens the movement
@@ -52,19 +55,23 @@ function animateSeparation() {
 
 		}, timeInterval );
 
-	}).mouseleave(function(){ 
+	});
+
+	section.mouseleave(function(){ 
 
 		clearInterval(loop);
 		xp 			= 520;
 		mouseX 		= 0;
 		relMouseX 	= 520;
 
-		leftImg.css({width: 520});
-		rightImg.css({width: 520});
+		// leftImg.css({width: 520});
+		// rightImg.css({width: 520});
+		// leftImg.finish();
+		// rightImg.finish();
 
-		// leftImg.animate({width: 520}, duration);
-		// rightImg.animate({width: 520}, duration);
-
+		leftImg.finish().animate({width: 520}, duration);
+		rightImg.finish().animate({width: 520}, duration);
+		
 		// coderDesc.hoverFlow(e.type, {opacity: 1}, duration, 'easeOutQuad');
 		// designerDesc.hoverFlow(e.type, {opacity: 1}, duration, 'easeOutQuad');
 		// coderBg.hoverFlow(e.type, {right:100, opacity: 1}, duration, 'easeOutQuad');
