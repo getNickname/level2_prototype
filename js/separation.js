@@ -19,10 +19,11 @@ function animateSeparation() {
 	var mouseX = 0;
 	var relMouseX = 520;
 	var xp = 520;
-	frameRate =  30;
-	timeInterval = Math.round( 1000 / frameRate );		
+	var loop;
+	var frameRate = 30;
+	var timeInterval = Math.round( 1000 / frameRate );
 
-	section.mouseenter(function(e){
+	section.mouseenter(function(){
 
 		// Get mouse position
 		section.mousemove(function(e){
@@ -40,8 +41,8 @@ function animateSeparation() {
 			// zeno's paradox dampens the movement
 			xp += (relMouseX - xp) / 12;
 
-			leftImg.css({width:520 + (520 - xp) * 0.5});
-		    rightImg.css({width:520 + (xp - 520) * 0.5});
+			leftImg.css({width:520 + (520 - xp) * 0.9});
+		    rightImg.css({width:520 + (xp - 520) * 0.9});
 
 		    // designerBg.css({left: 100 + (520 - xp) * 0.05, opacity: ((1040 - xp)/520)});
 		    // coderBg.css({right:  100 + (xp - 520) * 0.05, opacity: (xp/520)});
@@ -51,7 +52,7 @@ function animateSeparation() {
 
 		}, timeInterval );
 
-	}).mouseleave(function(e){ 
+	}).mouseleave(function(){ 
 
 		clearInterval(loop);
 		xp 			= 520;
@@ -71,6 +72,6 @@ function animateSeparation() {
 
 	}); 
 	
-};
+}
 
 animateSeparation();
