@@ -17,6 +17,7 @@ html, body, div{
 		display: block;
 		position: absolute;
 		height: 585px;
+		width: 50%;
 		top: 0;
 	}
 
