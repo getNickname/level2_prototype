@@ -22,9 +22,11 @@ html, body, div{
 
 #sep-left-img{
 	background: url(../img/sep-left-image.jpg) 0 0 no-repeat;
+	left: 0;
 }
 
 #sep-right-img{
 	background: url(../img/sep-right-image.jpg) 0 0 no-repeat;
 	background-position: 100% 0;
+	right: 0;
 }
